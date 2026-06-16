@@ -1,0 +1,11 @@
+name,phone,departure_city,alternative_cities,transport_mode,driver_license,available_seats,detour_flexibility,transport_preference,train_station_limit,return_transport,notes
+Lisa Martin,0612345678,Lyon,Grenoble,OWN_CAR,YES,2,YES,,,"OWN_CAR","Je peux faire un détour raisonnable"
+Hélion Dupont,0623456789,Lyon,,LOOKING_FOR_CARPOOL,YES,,,CARPOOL_ONLY,,LOOKING_FOR_CARPOOL,"Flexible sur les horaires"
+Camille Bernard,0634567890,Bruxelles,,TRAIN,NO,,,TRAIN_ONLY,Mons,TRAIN,"Arrivée prévue vers 14h"
+Thomas Petit,0645678901,Annecy,Lyon,LOOKING_FOR_CARPOOL,YES,,,CARPOOL_ONLY,,LOOKING_FOR_CARPOOL,"Peut rejoindre Lyon si besoin"
+Julie Robert,0656789012,Villeurbanne,Lyon,LOOKING_FOR_CARPOOL,NO,,,CARPOOL_ONLY,,LOOKING_FOR_CARPOOL,""
+Pierre Moreau,0667890123,Grenoble,Lyon,OWN_CAR,YES,3,LIMITED,,,"OWN_CAR","Retour plus flexible"
+Sarah Leroy,0678901234,Lille,,TRAIN,YES,,,TRAIN_CARPOOL,Saint-Ghislain,LOOKING_FOR_CARPOOL,"Train puis covoit possible"
+Maxime Roux,0689012345,Bron,Lyon,LOOKING_FOR_CARPOOL,YES,,,CARPOOL_ONLY,,LOOKING_FOR_CARPOOL,""
+Emma Garcia,0690123456,Bordeaux,,OWN_CAR,YES,4,YES,,,"OWN_CAR",""
+Lucas Henry,0601234567,Paris,,TRAIN,NO,,,TRAIN_ONLY,Mons,TRAIN,""

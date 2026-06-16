@@ -1,0 +1,4 @@
+passenger_name,passenger_phone,passenger_city,driver_name,driver_phone,driver_city,city_cluster,available_seats,match_score,reason
+Hélion Dupont,623456789,Lyon,Lisa Martin,612345678,Lyon,LYON_AREA,2,100,Same departure area
+Julie Robert,656789012,Villeurbanne,Lisa Martin,612345678,Lyon,LYON_AREA,2,100,Same departure area
+Maxime Roux,689012345,Bron,Lisa Martin,612345678,Lyon,LYON_AREA,2,100,Same departure area

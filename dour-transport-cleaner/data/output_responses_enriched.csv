@@ -1,0 +1,11 @@
+name,phone,departure_city,alternative_cities,transport_mode,driver_license,available_seats,detour_flexibility,transport_preference,train_station_limit,return_transport,notes,normalized_city,city_cluster,alternative_clusters,transport_profile,needs_action,confidence,reason,error
+Lisa Martin,612345678,Lyon,Grenoble,OWN_CAR,YES,2.0,YES,,,OWN_CAR,Je peux faire un détour raisonnable,LYON,LYON_AREA,['GRENOBLE_AREA'],DRIVER,False,0.95,Possède une voiture avec permis et places disponibles,
+Hélion Dupont,623456789,Lyon,,LOOKING_FOR_CARPOOL,YES,,,CARPOOL_ONLY,,LOOKING_FOR_CARPOOL,Flexible sur les horaires,LYON,LYON_AREA,[],PASSENGER,True,0.85,"Cherche covoiturage sans voiture propre, flexible sur horaires",
+Camille Bernard,634567890,Bruxelles,,TRAIN,NO,,,TRAIN_ONLY,Mons,TRAIN,Arrivée prévue vers 14h,BRUXELLES,BRUSSELS_AREA,[],TRAIN_ONLY,False,0.95,"Voyage uniquement en train, pas besoin de coordination supplémentaire",
+Thomas Petit,645678901,Annecy,Lyon,LOOKING_FOR_CARPOOL,YES,,,CARPOOL_ONLY,,LOOKING_FOR_CARPOOL,Peut rejoindre Lyon si besoin,ANNECY,ANNECY_AREA,['LYON_AREA'],PASSENGER,True,0.85,"Cherche covoiturage, peut rejoindre Lyon si besoin",
+Julie Robert,656789012,Villeurbanne,Lyon,LOOKING_FOR_CARPOOL,NO,,,CARPOOL_ONLY,,LOOKING_FOR_CARPOOL,,VILLEURBANNE,LYON_AREA,['LYON_AREA'],PASSENGER,True,0.85,"Cherche covoiturage sans permis, besoin de coordination",
+Pierre Moreau,667890123,Grenoble,Lyon,OWN_CAR,YES,3.0,LIMITED,,,OWN_CAR,Retour plus flexible,GRENOBLE,GRENOBLE_AREA,['LYON_AREA'],DRIVER,False,0.95,"Personne avec voiture et places disponibles, retour flexible",
+Sarah Leroy,678901234,Lille,,TRAIN,YES,,,TRAIN_CARPOOL,Saint-Ghislain,LOOKING_FOR_CARPOOL,Train puis covoit possible,LILLE,LILLE_AREA,[],TRAIN_CARPOOL,True,0.9,"Préférence train avec covoiturage, cherche covoiturage retour",
+Maxime Roux,689012345,Bron,Lyon,LOOKING_FOR_CARPOOL,YES,,,CARPOOL_ONLY,,LOOKING_FOR_CARPOOL,,LYON,LYON_AREA,['LYON_AREA'],PASSENGER,True,0.9,Personne cherchant un covoiturage sans voiture disponible,
+Emma Garcia,690123456,Bordeaux,,OWN_CAR,YES,4.0,YES,,,OWN_CAR,,BORDEAUX,BORDEAUX_AREA,[],DRIVER,False,0.95,"Personne avec voiture et permis, plusieurs places disponibles",
+Lucas Henry,601234567,Paris,,TRAIN,NO,,,TRAIN_ONLY,Mons,TRAIN,,PARIS,PARIS_AREA,[],TRAIN_ONLY,False,0.9,"Voyage uniquement en train, pas besoin de coordination supplémentaire",
