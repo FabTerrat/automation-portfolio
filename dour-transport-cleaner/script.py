@@ -59,37 +59,68 @@ def enrich_rows(df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(enriched_rows)
 
 
+def calculate_match_score(passenger: dict, driver: dict):
+    passenger_cluster = passenger["city_cluster"]
+    driver_cluster = driver["city_cluster"]
+
+    alternative_clusters = passenger.get("alternative_clusters", [])
+
+    if passenger_cluster == driver_cluster:
+        return 100, "Same departure area"
+
+    if driver_cluster in alternative_clusters:
+        return 80, "Alternative departure area"
+
+    return None, None
+
 
 def generate_matches(enriched_df: pd.DataFrame) -> pd.DataFrame:
-    drivers = enriched_df[enriched_df["transport_profile"] == "DRIVER"]
-    passengers = enriched_df[enriched_df["transport_profile"] == "PASSENGER"]
+    drivers = enriched_df[
+        enriched_df["transport_profile"] == "DRIVER"
+    ]
+
+    passengers = enriched_df[
+        enriched_df["transport_profile"].isin(
+            ["PASSENGER", "TRAIN_CARPOOL"]
+        )
+    ]
 
     matches = []
 
     for _, passenger in passengers.iterrows():
-        for _, driver in drivers.iterrows():
-            if passenger["city_cluster"] != driver["city_cluster"]:
-                continue
 
-            available_seats = int(float(driver.get("available_seats", 0) or 0))
+        for _, driver in drivers.iterrows():
+
+            available_seats = int(
+                float(driver.get("available_seats", 0) or 0)
+            )
 
             if available_seats <= 0:
                 continue
 
-            matches.append({
-                "passenger_name": passenger["name"],
-                "passenger_phone": passenger["phone"],
-                "passenger_city": passenger["departure_city"],
-                "driver_name": driver["name"],
-                "driver_phone": driver["phone"],
-                "driver_city": driver["departure_city"],
-                "city_cluster": passenger["city_cluster"],
-                "available_seats": available_seats,
-                "match_score": 100,
-                "reason": "Same departure area",
-            })
+            score, reason = calculate_match_score(
+                passenger,
+                driver,
+            )
+
+            if score is None:
+                continue
+
+            matches.append(
+                {
+                    "passenger_name": passenger["name"],
+                    "passenger_city": passenger["departure_city"],
+                    "driver_name": driver["name"],
+                    "driver_city": driver["departure_city"],
+                    "city_cluster": driver["city_cluster"],
+                    "available_seats": available_seats,
+                    "match_score": score,
+                    "reason": reason,
+                }
+            )
 
     return pd.DataFrame(matches)
+
 
 def main() -> None:
     try:
